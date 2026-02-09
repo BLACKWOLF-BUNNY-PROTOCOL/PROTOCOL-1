@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BLACKWOLF PROTOCOL • 2026 • @Sn070ke</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --wolf:#ff2a00; --neon:#00ff9d; --dark:#0a0a0a; }
+  body { background:var(--dark); color:#ddd; font-family:system-ui, sans-serif; margin:0; line-height:1.6; }
+  .hero { background:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.9)), url('https://picsum.photos/id/1015/2000/1200') center/cover no-repeat; height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:0 1rem; }
+  .wolf { font-size:clamp(3.5rem, 10vw, 5.5rem); color:var(--wolf); text-shadow:0 0 50px var(--wolf); margin:0; }
+  nav { background:#111; padding:1rem; position:sticky; top:0; z-index:100; display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; }
+  nav a { color:#ddd; text-decoration:none; font-weight:700; }
+  section { padding:4rem 5%; max-width:1280px; margin:auto; }
+  .card, .test-box { background:#1a1a1a; border:3px solid var(--wolf); padding:1.8rem; border-radius:12px; margin:1rem 0; box-shadow:0 0 30px rgba(255,42,0,0.3); }
+  .neon { color:var(--neon); text-shadow:0 0 20px var(--neon); }
+  canvas { border:5px solid var(--wolf); background:#000; cursor:crosshair; width:100%; max-width:1000px; display:block; margin:2rem auto; }
+  button { background:var(--wolf); color:#000; border:none; padding:1rem 2rem; font-size:1.1rem; font-weight:bold; cursor:pointer; border-radius:8px; transition:0.3s; }
+  button:hover { background:#fff; transform:scale(1.05); }
+  input { background:#222; color:#ddd; border:2px solid var(--wolf); padding:0.8rem; width:100%; margin:0.5rem 0; box-sizing:border-box; }
+  .result { font-size:1.6rem; margin:1.5rem 0; font-weight:bold; text-align:center; }
+  details summary { cursor:pointer; font-size:1.4rem; margin:1.5rem 0 0.5rem; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div>
+    <h1 class="wolf">BLACKWOLF PROTOCOL</h1>
+    <p style="font-size:clamp(1.8rem, 5vw, 2.4rem); margin:1rem 0;">Forge the Blackwolf Within • AI + Wilderness Survival 2026–2030</p>
+    <p>@Sn070ke • Demonsn070ke • SNOWTECH • SCARTECH • GODSEED • IZ-TECH • DADDY COIN NETWORK</p>
+    <button onclick="document.getElementById('test').scrollIntoView({behavior:'smooth'})">SURVIVAL PHYSICAL TEST → UNLOCK NEXT TIER</button>
+  </div>
+</div>
+
+<nav>
+  <a href="#commerce">COMMERCE</a>
+  <a href="#test">PHYSICAL TEST</a>
+  <a href="#forge">CHAOS FORGE</a>
+  <a href="#tiers">TIERS & COURSES</a>
+</nav>
+
+<section id="commerce">
+  <h2 class="neon">DIGITAL COMMERCE – PAYHIP INTEGRATION READY</h2>
+  <p>Host free here on GitHub Pages. Sell real courses via Payhip (free setup).</p>
+  <p>Replace placeholders with your Payhip links after setup.</p>
+  <button onclick="window.open('https://payhip.com','_blank')">SET UP PAYHIP NOW (FREE)</button>
+</section>
+
+<section id="test">
+  <h2 class="neon">SURVIVAL PHYSICAL TEST – GATE TO ALPHA TIER</h2>
+  <p>Perform → Enter honest results → Score 150+ = PASS → Protocols unlock preview.</p>
+  <div class="test-box">
+    <label>Max Push-ups (1 min):</label><input id="push" type="number" min="0" value="30">
+    <label>Plank Hold (seconds):</label><input id="plank" type="number" min="0" value="120">
+    <label>Cold Exposure (minutes):</label><input id="cold" type="number" min="0" value="5">
+    <label>Chaos Forge Time (min today):</label><input id="forge" type="number" min="0" value="15">
+    <label>Scars Journal Entries (this week):</label><input id="scars" type="number" min="0" value="3">
+    <button onclick="runTest()">SUBMIT & CLAIM RANK</button>
+    <div id="result" class="result"></div>
+  </div>
+</section>
+
+<section id="tiers" style="display:none;" class="alpha-unlocked">
+  <h2 class="neon">ALPHA TIER UNLOCKED – ADVANCED PROTOCOLS ACTIVE</h2>
+  <p>GODSEED deep manifestation drills • SNOW FLEET mobile command structure • IZ-TECH privacy fortress scripts • Full wilderness sim drops.</p>
+  <p>Enroll Tier 2 on Payhip for live coaching + 72-hr Alpha Trial.</p>
+  <button onclick="window.open('https://payhip.com/your-tier2-link','_blank')">ENROLL ALPHA (PAYHIP)</button>
+</section>
+
+<section id="forge">
+  <h2 class="neon">CHAOS FORGE – LIVE MANDELBROT TRAINING</h2>
+  <p>Wheel zoom • Drag to pan • Buttons for jumps. Master chaos = master survival.</p>
+  <canvas id="canvas" width="900" height="550"></canvas>
+  <div style="text-align:center; margin-top:1rem;">
+    <button onclick="resetView()">RESET VIEW</button>
+    <button onclick="zoomToSeahorse()">SEAHORSE VALLEY</button>
+    <button onclick="zoomToElephant()">ELEPHANT TRUNK</button>
+    <button onclick="randomZoom()">RANDOM CHAOS JUMP</button>
+  </div>
+</section>
+
+<section id="tiers">
+  <h2 class="neon">FULL TIERS & COURSES – FROM OUR CHATS</h2>
+  <div class="card">
+    <h3>Tier 0 – Awakening (Free Here)</h3>
+    <p>Starter Howl Pack • Basic drills • Chaos Forge access</p>
+  </div>
+  <details><summary>Tier 1 – Base Camp SNOWTECH/SCARTECH</summary>
+    <ul>
+      <li>SNOWTECH: Layering, fire from wet, AI weather prediction</li>
+      <li>SCARTECH: Failure → weapon mindset</li>
+      <li>DADDY COIN: Economic collapse survival basics</li>
+      <li>IZ-TECH: Intro privacy scripts</li>
+    </ul>
+  </details>
+  <details><summary>Tier 2 – Alpha Immersion (Gated)</summary>
+    <ul>
+      <li>Weekly wilderness sim drops</li>
+      <li>Personal AI chaos coaching</li>
+      <li>SNOW FLEET command training</li>
+      <li>GODSEED advanced manifestation</li>
+      <li>72-hour solo trial</li>
+    </ul>
+  </details>
+</section>
+
+<footer style="text-align:center; padding:3rem; background:#111;">
+  Built for Demonsn070ke • The Pack Hunts Together • GitHub Pages Powered • 2026 is ours. 🐺🔥
+</footer>
+
+<script>
+// PHYSICAL TEST GATE
+function runTest() {
+  const push = parseInt(document.getElementById('push').value) || 0;
+  const plank = parseInt(document.getElementById('plank').value) || 0;
+  const cold = parseInt(document.getElementById('cold').value) || 0;
+  const forgeTime = parseInt(document.getElementById('forge').value) || 0;
+  const scars = parseInt(document.getElementById('scars').value) || 0;
+  
+  const score = (push * 2) + Math.floor(plank / 2) + (cold * 10) + (forgeTime * 5) + (scars * 15);
+  const res = document.getElementById('result');
+  
+  if (score >= 150) {
+    res.innerHTML = `✅ PASSED – SCORE ${score}<br>ALPHA PROTOCOLS UNLOCKED. The Pack recognizes you.`;
+    document.querySelector('.alpha-unlocked').style.display = 'block';
+    document.querySelector('.alpha-unlocked').scrollIntoView({behavior:'smooth'});
+  } else {
+    res.innerHTML = `❌ SCORE ${score} – Not yet, Wolf. Train in the Forge & retry.`;
+  }
+}
+
+// CHAOS FORGE (Mandelbrot – interactive)
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let xmin = -2.5, xmax = 1, ymin = -1.25, ymax = 1.25;
+const maxIter = 120;
+let dragging = false, lastX, lastY;
+
+function mandel(px, py) {
+  const x0 = xmin + (xmax - xmin) * px / canvas.width;
+  const y0 = ymin + (ymax - ymin) * py / canvas.height;
+  let x = 0, y = 0, iter = 0;
+  while (x*x + y*y <= 4 && iter < maxIter) {
+    const xt = x*x - y*y + x0;
+    y = 2*x*y + y0;
+    x = xt;
+    iter++;
+  }
+  return iter;
+}
+
+function draw() {
+  const img = ctx.createImageData(canvas.width, canvas.height);
+  for (let px = 0; px < canvas.width; px++) {
+    for (let py = 0; py < canvas.height; py++) {
+      const iter = mandel(px, py);
+      const idx = (py * canvas.width + px) * 4;
+      const bright = iter === maxIter ? 0 : Math.floor(255 * iter / maxIter);
+      img.data[idx]   = bright * 2;      // red wolf
+      img.data[idx+1] = bright * 0.8;
+      img.data[idx+2] = 255 - bright * 1.2; // cold blue
+      img.data[idx+3] = 255;
+    }
+  }
+  ctx.putImageData(img, 0, 0);
+}
+
+function resetView() { xmin=-2.5; xmax=1; ymin=-1.25; ymax=1.25; draw(); }
+function zoomToSeahorse() { xmin=-0.8; xmax=-0.7; ymin=0.1; ymax=0.2; draw(); }
+function zoomToElephant() { xmin=0.25; xmax=0.3; ymin=-0.02; ymax=0.02; draw(); }
+function randomZoom() {
+  const cx = xmin + Math.random() * (xmax - xmin);
+  const cy = ymin + Math.random() * (ymax - ymin);
+  const r = (xmax - xmin) * 0.18;
+  xmin = cx - r; xmax = cx + r;
+  ymin = cy - r * 0.6; ymax = cy + r * 0.6;
+  draw();
+}
+
+canvas.addEventListener('wheel', e => {
+  e.preventDefault();
+  const rect = canvas.getBoundingClientRect();
+  const mx = (e.clientX - rect.left) / rect.width;
+  const my = (e.clientY - rect.top) / rect.height;
+  const factor = e.deltaY > 0 ? 1.35 : 0.72;
+  const newW = (xmax - xmin) * factor;
+  const newH = (ymax - ymin) * factor;
+  xmin += (xmax - xmin) * mx * (1 - factor);
+  xmax = xmin + newW;
+  ymin += (ymax - ymin) * my * (1 - factor);
+  ymax = ymin + newH;
+  draw();
+});
+
+canvas.addEventListener('mousedown', e => { dragging = true; lastX = e.clientX; lastY = e.clientY; });
+canvas.addEventListener('mouseup', () => dragging = false);
+canvas.addEventListener('mousemove', e => {
+  if (!dragging) return;
+  const dx = (e.clientX - lastX) / canvas.width * (xmax - xmin);
+  const dy = (e.clientY - lastY) / canvas.height * (ymax - ymin);
+  xmin -= dx; xmax -= dx; ymin -= dy; ymax -= dy;
+  lastX = e.clientX; lastY = e.clientY;
+  draw();
+});
+
+draw(); // Initial render
+</script>
+</body>
+</html>
