@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "id": "tier1",
+      "title": "Tier 1 - Base Camp",
+      "price": 67,
+      "currency": "USD",
+      "payhip_url": "https://payhip.com/YOUR_PAYHIP_STORE/product/tier1"
+    },
+    {
+      "id": "tier2",
+      "title": "Tier 2 - Alpha Immersion",
+      "price": 697,
+      "currency": "USD",
+      "payhip_url": "https://payhip.com/YOUR_PAYHIP_STORE/product/tier2"
+    }
+  ]
+}
